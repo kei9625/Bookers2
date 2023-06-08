@@ -9,6 +9,10 @@ class BooksController < ApplicationController
     @books.save
     redirect_to books_path
   end
+  
+  def edit
+    
+  end
 
   def index
   end
