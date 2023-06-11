@@ -2,9 +2,9 @@
 <h2>User info</h2>
   <!--profile画像の表示-->
   <% if @user.profile_image.attached? %>
-    <%= image_tag @user.profile_image, size: "200x200" %>
+    <%= image_tag @user.profile_image, size: "100x100" %>
   <% else %>
-    <%= image_tag 'no_image', size: "200x200" %>
+    <%= image_tag 'no_image', size: "100x100" %>
   <% end %>
 <table class="table">
   <tbody><tr></tr>
@@ -22,7 +22,7 @@
   <p><%= link_to "user setting",edit_user_path(@user) %></p>
 
   <h2>New book</h2>
-  <%= form_with do |f| %>
+  <%= form_with model: @books do |f| %>
     <label for="book_title">Title</label>
     <%= f.text_field :title %>
 
