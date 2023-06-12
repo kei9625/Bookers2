@@ -1,11 +1,10 @@
 <h2>Book detail</h2>
 
-<% @books.each do |books| %>
+
+<span><%=image_tag @books.user.get_profile_image(100,100)%></span>
 
 <p>Title</p>
-<span><%= books.title %></span>
+<span><%=link_to @books.title user_path(@books.user.id) %></span>
 
 <p>Opinion</p>
-<span><%= books.body %></span>
-
-<% end %>
+<span><%= @books.body %></span>
