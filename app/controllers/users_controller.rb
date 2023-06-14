@@ -1,7 +1,10 @@
 class UsersController < ApplicationController
 
   def index
-
+    @user_all = User.all
+    @user = current_user
+    # 全件取得の時はID要らない
+    # @user = User.find(params[:id])
   end
 
   def show
