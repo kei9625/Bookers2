@@ -5,10 +5,14 @@
 
 <h2>Books</h2>
 
-<p><%=image_tag @books.user.get_profile_image(100,100) %></p>
+<% @books.each do |book| %>
+
+<span><%=image_tag book.user.get_profile_image(100,100)%></span>
 
 <p>Title</p>
-<span><%= link_to @books.title, user_path(@books.user_id) %></span>
+<span><%=link_to book.title, book_path(book.id) %></span>
 
 <p>Opinion</p>
-<span><%= @books.body %></span>
+<span><%= book.body %></span>
+
+<% end %>

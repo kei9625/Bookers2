@@ -12,5 +12,5 @@
 
 <% if @books.user == current_user %>
   <%= link_to "edit", edit_book_path(@books) %>
-  <%= link_to "destroy", book_path(@books), method: :delete %>
+  <%= link_to "destroy", book_path(@books), method: :delete, "data-confirm" => "本当に削しますか？" %>
 <% end %>
