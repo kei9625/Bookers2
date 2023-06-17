@@ -1,6 +1,8 @@
-<%= render 'books/list', user: @user, book: @book %>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0 mx-auto">
+  		<h1>Editing Book</h1>
 
-<h1>edit_book_path</h1>
 <%= form_with model: @books do |f| %>
   <label for="inputTitle">Title</label>
   <%= f.text_field :title %>
@@ -9,3 +11,7 @@
   <%= f.submit "Update book" %>
 <% end %>
 <p><%= link_to "Show", book_path %> | <%= link_to "Back", books_path %></p>
+
+</div>
+</div>
+</div>
