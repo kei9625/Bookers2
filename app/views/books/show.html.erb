@@ -16,12 +16,17 @@
     </thead>
     <tbody>
       <tr>
-        <td><%=image_tag @books.user.get_profile_image(100,100) %></td>
-        <td><%= link_to @books.title, user_path(@books.user_id) %></td>
+        <!--%= link_to @book.name, user_path(@books.user_id) %>-->
+        <td><%= link_to user_path(@books.user_id) do %>
+          <%=image_tag @books.user.get_profile_image(100,100)%></br>
+          <%=@user.name%>
+          <% end %>
+        </td>
+        <td><%= link_to @books.title, book_path(@books.user_id) %></td>
         <td><%= @books.body %></td>
         <% if @books.user == current_user %>
-        <td><%= link_to "edit", edit_book_path(@books) %></td>
-        <td><%= link_to "destroy", book_path(@books), method: :delete, "data-confirm" => "本当に削しますか？" %></td>
+        <td><%= link_to "Edit", edit_book_path(@books) %></td>
+        <td><%= link_to "Destroy", book_path(@books), method: :delete, "data-confirm" => "本当に削しますか？" %></td>
         <% end %>
       </tr>
     </tbody>

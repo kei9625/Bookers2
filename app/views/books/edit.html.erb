@@ -4,7 +4,7 @@
   		<h1>Editing Book</h1>
 
   <% if @books.errors.any? %>
-  <%= @books.errors.count %>件のエラーが発生しました
+  <%= @books.errors.count %>件のerrorが発生しました
   <ul>
   <% @books.errors.full_messages.each do |message| %>
       <li><%= message %></li>
@@ -17,7 +17,7 @@
   <%= f.text_field :title %>
   <label for="inputBody">Opinion</label>
   <%= f.text_area :body  %>
-  <%= f.submit "Update book" %>
+  <%= f.submit "Update Book" %>
 <% end %>
 <p><%= link_to "Show", book_path %> | <%= link_to "Back", books_path %></p>
 
